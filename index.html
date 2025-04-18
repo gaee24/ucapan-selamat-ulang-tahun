@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎉 Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Slide 1 -->
+    <div class="slide active" id="slide1">
+      <h1>Heh luu</h1>
+      <p>Nih Kado Nih Dari gua</p>
+      <button onclick="nextSlide()">Klik dong</button>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" id="slide2">
+      <h1>🎉 SELAMAT ULANG TAHUN 🎉</h1>
+      <p>
+        Semoga Panjang Umur, Selalu sehat, Murah rejeki, dan makin kece tiap
+        hari Anjayyy, Panjang Panjang Orang pendek 😎
+      </p>
+      <img src="Stiker 1.gif" class="character" alt="Beruang lucu" />
+      <button onclick="showMessage()">Klik lagi coba</button>
+      <div class="hidden-msg">
+        <p>Gamao tau gua mah malem minggu makan makan 😆</p>
+        <button onclick="nextSlide()">Lanjut</button>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" id="slide3">
+      <h1>🎁 Nih kadonya Nih</h1>
+      <button onclick="showGift()">HAhahahah!!</button>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide" id="slide4">
+      <h1>💖 Tangantang tang tang tang tang 💖</h1>
+      <p>Kan tadi udah gua kasih dikantor 🤣</p>
+      <img src="Stiker 2.gif" class="gift" alt="Hadiah" />
+      <canvas id="confetti" class="confetti"></canvas>
+    </div>
+
+    <!-- Musik -->
+    <audio autoplay loop>
+      <source src="musik-bg.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.querySelector("audio");
+        const userInteraction = () => {
+          audio.play();
+          document.removeEventListener("click", userInteraction);
+        };
+        document.addEventListener("click", userInteraction);
+      });
+    </script>
+  </body>
+</html>
